@@ -1,0 +1,29 @@
+# Secrets — NEVER commit these
+.env
+credentials/*.json
+!credentials/.gitkeep
+
+# Output CSVs (may contain PII)
+output/*.csv
+output/*.json
+!output/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Run logs — contain profile IDs and document CDN URLs
+output/*.log

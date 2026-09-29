@@ -1,0 +1,12 @@
+google-api-python-client==2.149.0
+google-auth==2.35.0
+google-auth-oauthlib==1.2.1
+google-auth-httplib2==0.2.0
+google-generativeai==0.8.3
+requests==2.32.3
+rapidfuzz==3.10.1
+indic-transliteration==2.3.82
+pyyaml==6.0.2
+python-dotenv==1.0.1
+tqdm==4.67.1
+Pillow==11.0.0

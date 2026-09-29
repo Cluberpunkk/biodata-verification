@@ -1,0 +1,70 @@
+# ============================================================
+# Project Trust V1 — Verifier Config
+# ============================================================
+
+google_sheets:
+  # Sheet ID from URL: docs.google.com/spreadsheets/d/{SHEET_ID}/edit
+  sheet_id: "1TOsx0HlT0ok1JKSq8lOLDgPy34aIVallrOhtQ8E-f0k"
+  # Tab name within the sheet
+  worksheet_name: "Sheet1"
+  # Range to read (A2 = skip header, read from row 2 onwards)
+  range: "Sheet1!A2:H"
+  # Path to service account JSON (relative to repo root)
+  credentials_path: "credentials/service_account.json"
+
+# Column mapping (0-indexed positions in the range above)
+columns:
+  file: 0           # Column A
+  image_url: 1      # Column B  (matrimony-cdn URL)
+  content_uri: 2    # Column C  (ignored)
+  profile_id: 3     # Column D
+  user_id: 4        # Column E
+  name: 5           # Column F
+  date_of_birth: 6  # Column G
+  contact_number: 7 # Column H
+
+gemini:
+  # gemini-3.1-pro-preview = newest, strongest reasoning model (verified working
+  # with this SDK; returns valid JSON). Falls back to gemini-2.5-pro if retired.
+  model: "gemini-3.1-pro-preview"
+  # API key loaded from .env (GEMINI_API_KEY)
+  max_retries: 3
+  timeout_seconds: 60
+
+processing:
+  # Parallel workers — 10 is safe for Gemini free/paid tier
+  max_workers: 10
+  # Dedupe by this column before processing
+  dedupe_by: "profile_id"
+  # Limit for testing (set to null for full run)
+  row_limit: null  # full run — all ~588 unique profiles
+
+scoring:
+  # All scoring judgment is done by Gemini (see the prompt); Python only applies
+  # this weighting and the threshold below. Weights must sum to 100.
+  name_weight: 50   # name match carries 50%
+  dob_weight: 50    # DOB match carries 50% (many users mistype DOB, so balanced)
+  verified_min: 80  # overall >= 80 AND valid govt ID → VERIFIED
+                    # overall <  80 AND valid govt ID → UNDER_REVIEW
+                    # not a valid govt ID / no image   → REJECTED (short reason)
+
+# Fixed set of reasons Gemini assigns to UNDER_REVIEW rows (shown in admin panel).
+review_reasons:
+  - "Poor image quality / improper lighting"
+  - "Name and/or DOB do not fully match"
+  - "Partial match — needs manual confirmation"
+
+# Short reasons the CS team picks from when manually rejecting an UNDER_REVIEW
+# item. The chosen one becomes the rejection notification sent to the user.
+cs_reasons:
+  - "Name does not match profile"
+  - "Date of birth does not match"
+  - "Document not clearly readable / poor quality"
+  - "Not a valid government ID"
+  - "ID appears to belong to someone else"
+  - "Document looks fake or edited"
+  - "Incomplete document uploaded"
+
+output:
+  csv_path: "output/verification_results.csv"
+  summary_path: "output/summary.json"

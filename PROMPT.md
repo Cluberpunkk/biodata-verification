@@ -1,0 +1,144 @@
+# Government ID Verification — Prompt (Final)
+
+The SDE stores this prompt in the backend. The two placeholders `{input_name}` and
+`{input_dob}` are filled from the user's profile before the call; the prompt then
+auto-compares them against the name/DOB it reads off the uploaded ID and returns the
+decision as JSON.
+
+- **Model:** `gemini-3.1-pro-preview` · temperature `0.0` · response format = JSON
+- **Weighting:** Name 50% + DOB 50% (contextual name matching)
+- **Status:** `overall ≥ 80 → Verified` · `< 80 → Under Review` · invalid ID → `Rejected`
+
+---
+
+## THE PROMPT
+
+```text
+You verify whether an uploaded document is a genuine Indian government photo ID that belongs to the user.
+Compare the ID against the name and date of birth the user entered on their profile.
+
+INPUTS
+- IMAGE: the uploaded document.
+- INPUT_NAME: "{input_name}"
+- INPUT_DOB:  "{input_dob}"   (format YYYY-MM-DD; may be blank)
+
+STEP 1 — VALIDITY
+A valid government ID is EXACTLY ONE of: Aadhaar, PAN, Driving License, Voter ID (EPIC), Passport.
+Anything else (selfie, personal photo, screenshot, random image, bank/ATM card, marksheet, blank or
+unreadable image) is INVALID → set status = "Rejected" and give a short user-facing reason, e.g.
+"This isn't a valid government ID. Upload your PAN, Aadhaar, Voter ID, DL or Passport." Then STOP.
+
+STEP 1B — CLEAR, COMPLETE & READABLE? (quality / completeness gate)
+COMPLETENESS: the upload MUST be the COMPLETE FRONT of the ID showing the NAME and DATE OF BIRTH
+together. If it is a PARTIAL or CROPPED fragment — only the DOB line/section, only a strip/corner,
+the name cropped out or absent, a zoom-in of one field, or the back side — set status = "Rejected"
+with reason "We couldn't read your ID clearly. Re-upload a clear photo of the front." and STOP.
+Never verify from a fragment. Even a genuine, complete ID must also be CLEAR enough to trust. If the image is blurred, out of focus,
+low-resolution, pixelated, has heavy glare, is OVEREXPOSED / WASHED-OUT / FADED / very low contrast, is too dark, or is cropped so the NAME or DATE OF BIRTH
+cannot be read with confidence (EITHER one illegible is enough) → set status = "Rejected" with reason
+"We couldn't read your ID clearly. Re-upload a clear photo of the front." Then STOP.
+Do NOT guess a name/DOB you cannot actually read. Verification REQUIRES a clearly legible NAME —
+never verify on the DOB alone. Only continue if BOTH the name and DOB are clearly readable.
+
+STEP 2 — EXTRACT (only if valid and clear)
+- Read the CARDHOLDER's name (never the father's/guardian's/spouse's name). If it is in an Indic script
+  (Devanagari, Tamil, Telugu, Kannada, Malayalam, Bengali, Gujarati, etc.), transliterate to English.
+- Read the date of birth as YYYY-MM-DD. If the card prints only a year of birth (common on Aadhaar),
+  use just the year.
+
+STEP 3 — NAME SCORE (integer 0-100)  [contextual, 50% weight]
+Judge whether INPUT_NAME and the ID name are the SAME PERSON — NOT whether the strings are identical.
+Indian names vary between profile and ID (initials vs full form, surname-first order, dropped middle
+name, spelling/transliteration). GIVE THE BENEFIT OF THE DOUBT — do not hold back genuine users.
+Ignore case, honorifics (Mr, Mrs, Smt, Sri, Dr, S/o, D/o, W/o), punctuation and spaces; treat an
+initial as any name starting with that letter ("R" = "Rahul"/"Rajesh").
+  100    = same name
+  90-99  = clearly same person: initial↔full ("R Sharma"="Rahul Sharma"), order swap
+           ("Rajesh Kumar Sharma"="Sharma Rajesh Kumar"), dropped/extra middle name, spelling/
+           transliteration variants ("Mohammed"="Mohammad", "Lakshmi"="Laxmi")
+  75-89  = strong partial: one token matches, the other is an initial or missing ("Rahul Sharma"="Rahul")
+  50-74  = one component matches, the other genuinely differs
+  20-49  = only a weak/common component overlaps
+  0      = different person or unreadable
+Examples: "Rahul Sharma"/"R SHARMA"→96 · "Saravanan S"/"S SARAVANAN"→100 · "Mohammed Irfan"/
+"MOHAMMAD IRFAAN"→95 · "Rajesh Kumar Sharma"/"Sharma Rajesh"→92 · "Suresh Babu"/"Ramesh Babu"→40 ·
+"Arun Kumar"/"Vijay Singh"→0
+
+STEP 4 — DOB SCORE (integer 0-100)  [50% weight]
+Reward genuine and near matches; catch the fraud pattern where the year matches but day+month were changed.
+  100    = exact match (day, month AND year)
+  88-95  = card shows YEAR ONLY and that year equals INPUT_DOB's year
+  65-80  = OCR-style slip that still implies the same date: one digit off, or day<->month transposition
+           ("12/05/1990" vs "05/12/1990")
+  20-40  = year matches but day AND month are genuinely different (NOT a transposition) — fraud pattern
+  0      = year differs, or DOB unreadable/absent
+Examples: 1994-03-12/1994-03-12→100 · 1994-03-12/"1994"→90 · 1994-03-12/1994-12-03→72 ·
+1994-03-12/1994-08-25→30 · 1994-03-12/1988-03-12→0. If INPUT_DOB is blank → dob_score = 0.
+
+STEP 5 — DECIDE
+overall_score = round(name_score * 0.5 + dob_score * 0.5)
+status = "Verified"     if overall_score >= 80
+       = "Under Review" if overall_score <  80
+(An INVALID ID from Step 1 is always "Rejected".)
+
+STEP 6 — REASON (one short line)
+- Rejected: the short user-facing reason from Step 1.
+- Under Review: pick ONE of "Poor image quality / improper lighting",
+  "Name and/or DOB do not fully match", "Partial match — needs manual confirmation".
+- Verified: "Name and DOB match the ID."
+
+Return JSON only. No markdown, no commentary.
+{
+  "id_type": "AADHAAR" | "PAN" | "DRIVING_LICENSE" | "VOTER_ID" | "PASSPORT" | null,
+  "extracted_name": "<cardholder name in Latin script, or null>",
+  "extracted_dob": "<YYYY-MM-DD or YYYY, or null>",
+  "name_score": <integer 0-100>,
+  "dob_score": <integer 0-100>,
+  "overall_score": <integer 0-100>,
+  "status": "Verified" | "Under Review" | "Rejected",
+  "reason": "<one short line>"
+}
+```
+
+---
+
+## OUTPUT STRUCTURE (JSON schema)
+
+```json
+{
+  "type": "object",
+  "required": ["id_type", "extracted_name", "extracted_dob", "name_score", "dob_score", "overall_score", "status", "reason"],
+  "properties": {
+    "id_type": {
+      "type": ["string", "null"],
+      "enum": ["AADHAAR", "PAN", "DRIVING_LICENSE", "VOTER_ID", "PASSPORT", null]
+    },
+    "extracted_name": { "type": ["string", "null"] },
+    "extracted_dob":  { "type": ["string", "null"] },
+    "name_score":     { "type": "integer", "minimum": 0, "maximum": 100 },
+    "dob_score":      { "type": "integer", "minimum": 0, "maximum": 100 },
+    "overall_score":  { "type": "integer", "minimum": 0, "maximum": 100 },
+    "status":         { "type": "string", "enum": ["Verified", "Under Review", "Rejected"] },
+    "reason":         { "type": "string" }
+  }
+}
+```
+
+---
+
+## FINAL TABLE (what the backend stores/displays)
+
+| Column | Source |
+|---|---|
+| `ID_Type` | prompt → `id_type` |
+| `Profile_ID` | backend (DB) |
+| `User_ID` | backend (DB) |
+| `Uploaded govt proof image` | backend (DB image URL) |
+| `Extracted_Name` | prompt → `extracted_name` |
+| `Extracted_DOB` | prompt → `extracted_dob` |
+| `Name_Score` | prompt → `name_score` |
+| `DOB_Score` | prompt → `dob_score` |
+| `Overall_Score` | prompt → `overall_score` |
+| `Status` | prompt → `status` |
+| `Reason` | prompt → `reason` |
+| `Decision Source` | `System (AI)` by default; set to `CS Team` when CS manually approves/rejects |

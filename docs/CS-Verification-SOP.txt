@@ -1,0 +1,62 @@
+GOVERNMENT ID VERIFICATION — CS REVIEW SOP (Under Review queue)
+Lokal Matrimony · Project Trust
+Audience: Customer Support team actioning the "Under Review" profiles (~92 in progress)
+
+WHY THIS QUEUE EXISTS
+The AI (Gemini) auto-decides most IDs: clear matches -> Verified, clear non-IDs/blurry -> Rejected.
+Anything it is NOT confident about lands in UNDER REVIEW for a human to make the final call.
+Your job: open each item, look at the ID image + the profile's Name/DOB + the AI's reason,
+then APPROVE (-> Verified badge) or REJECT (-> pick a reason -> user is notified to re-upload).
+
+WHAT YOU SEE IN EACH ROW
+- Profile Name / Profile DOB  = what the user entered at signup
+- Extracted Name / Extracted DOB = what the AI read from the ID
+- Name Score / DOB Score / Overall Score (0-100) = AI's confidence
+- Reason = short note on WHY it needs review
+- Uploaded image = OPEN THIS — your eyes are the final check
+
+HOW TO REVIEW EACH PROFILE (30-second checklist)
+1. Open the uploaded ID image.
+2. Is it a real govt ID? (Aadhaar / PAN / Driving Licence / Voter ID / Passport)
+3. Is it the FULL FRONT, clear and readable? (not cropped, blurry, washed-out, or the back side)
+4. Does the NAME on the ID match the profile name (same person)?
+5. Does the DOB on the ID match the profile DOB?
+6. Decide using the rules below.
+
+APPROVE only when ALL are true:
+  [✓] Genuine govt ID, full front, clearly readable
+  [✓] Name is clearly the SAME PERSON — allow normal variations:
+        - initials vs full name  ("R Sharma" = "Rahul Sharma")
+        - order swap             ("Rajesh Kumar Sharma" = "Sharma Rajesh Kumar")
+        - missing surname / middle name ("Jyothiraj" = "Jyothiraj S Yadav")
+        - spelling / language variants ("Mohammed"="Mohammad", Tamil/Hindi name = its English form)
+  [✓] DOB matches — exact date, OR an Aadhaar that prints only the YEAR and the year matches
+
+REJECT when ANY is true — then pick the matching reason from the dropdown:
+  - Photo is a selfie / screenshot / random image / not an ID  -> "Not a valid government ID"
+  - Blurred / washed-out / dark / cropped / back-side / unreadable -> "Document not clearly readable / poor quality"
+  - Name is clearly a DIFFERENT person                          -> "Name does not match profile"
+  - DOB is clearly different                                    -> "Date of birth does not match"
+  - ID clearly belongs to someone else (e.g. a much older parent/relative) -> "ID appears to belong to someone else"
+  - ID looks edited / tampered / fake                          -> "Document looks fake or edited"
+  - Only part of the ID uploaded / key details missing         -> "Incomplete document uploaded"
+
+TRICKY CASES — how to judge
+- Different name that only SHARES A PREFIX ("Vinay" vs "Vinayak", "Ram" vs "Ramesh"):
+    These are DIFFERENT names. Approve ONLY if you are confident it is the same person's
+    nickname/short form AND the DOB matches exactly. If unsure -> Reject "Name does not match".
+- Name blurry but DOB readable: you cannot confirm identity -> Reject "Document not clearly readable".
+- Only DOB / cropped section uploaded: -> Reject "Incomplete document uploaded".
+- Aadhaar showing only birth YEAR: fine to approve if the year matches and the name matches.
+- Regional-script name (Tamil/Telugu/Hindi) vs English profile: read it as the same name -> approve if it matches.
+- DOB day & month swapped (12/05 vs 05/12): likely same person -> approve if name matches.
+- Same year but clearly different day+month: treat as mismatch -> Reject "Date of birth does not match".
+
+AFTER YOU DECIDE
+- Approve -> set CS Decision = Approve  -> user gets the Verified badge.
+- Reject  -> set CS Decision = Reject + choose CS Reject Reason -> that reason is sent to the user,
+             who can re-upload a correct/clear ID.
+
+GOLDEN RULE
+When in doubt about identity, do NOT approve. Reject with the closest reason — the user can simply
+re-upload. A wrongly-approved ID hurts trust far more than asking a genuine user to try again.

@@ -4,8 +4,6 @@ credentials/*.json
 !credentials/.gitkeep
 
 # Output CSVs (may contain PII)
-output/*.csv
-output/*.json
 !output/.gitkeep
 
 # Python
@@ -26,4 +24,3 @@ venv/
 Thumbs.db
 
 # Run logs — contain profile IDs and document CDN URLs
-output/*.log

@@ -1,0 +1,133 @@
+/Users/mohdshamshulqamar/Downloads/project-trust-verifier/src/gemini_verifier.py:20: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+14:46:17 [INFO] rescue: 64 partial-extraction rows to rescue with gemini-2.5-pro
+14:46:17 [INFO] src.gemini_verifier: Initialised Gemini model: gemini-2.5-pro
+Rescuing:   0%|          | 0/64 [00:00<?, ?it/s]14:46:17 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/201022/27293_1000018511.png: binary/octet-stream
+14:46:17 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/272275/144933_66551.png: binary/octet-stream
+14:46:17 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/228969/29538_1000119175.png: binary/octet-stream
+14:46:17 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/438064/42994_8256.png: binary/octet-stream
+14:46:17 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/247034/31358_1000001402.png: binary/octet-stream
+14:46:24 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:   2%|▏         | 1/64 [00:08<09:05,  8.66s/it]14:46:26 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/239191/30875_1000122134.png: binary/octet-stream
+14:46:27 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:46:27 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:46:29 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:   3%|▎         | 2/64 [00:15<07:46,  7.52s/it]14:46:32 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/291749/34646_135505.png: binary/octet-stream
+Rescuing:   5%|▍         | 3/64 [00:17<05:16,  5.19s/it]14:46:35 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/426935/146650_1000076152.png: binary/octet-stream
+Rescuing:   6%|▋         | 4/64 [00:18<03:33,  3.57s/it]14:46:36 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/415699/160497_1000018646.png: binary/octet-stream
+14:46:37 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:46:41 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:   8%|▊         | 5/64 [00:24<04:22,  4.46s/it]14:46:42 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/336580/37331_1000491858.png: binary/octet-stream
+Rescuing:   9%|▉         | 6/64 [00:25<03:04,  3.17s/it]14:46:43 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/202284/27376_18667.png: binary/octet-stream
+Rescuing:  11%|█         | 7/64 [00:28<03:03,  3.22s/it]14:46:46 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/212497/28182_1000001731.png: binary/octet-stream
+14:46:47 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  12%|█▎        | 8/64 [00:31<02:51,  3.05s/it]14:46:49 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/419579/41721_1000451245.png: binary/octet-stream
+14:46:50 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  14%|█▍        | 9/64 [00:35<02:57,  3.24s/it]14:46:52 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/213919/28615_1000020954.png: binary/octet-stream
+Rescuing:  16%|█▌        | 10/64 [00:35<02:07,  2.36s/it]14:46:53 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/258030/32156_348.png: binary/octet-stream
+Rescuing:  17%|█▋        | 11/64 [00:37<01:58,  2.23s/it]14:46:55 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:46:55 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/439789/71142_1000001761.png: binary/octet-stream
+Rescuing:  19%|█▉        | 12/64 [00:39<01:57,  2.27s/it]14:46:57 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/237466/30346_1000004885.png: binary/octet-stream
+Rescuing:  20%|██        | 13/64 [00:43<02:22,  2.79s/it]14:47:01 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/369281/45866_327703.png: binary/octet-stream
+Rescuing:  22%|██▏       | 14/64 [00:45<01:59,  2.39s/it]14:47:02 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/206652/31230_1000036435.png: binary/octet-stream
+14:47:03 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:47:04 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:47:04 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:47:07 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  23%|██▎       | 15/64 [00:53<03:22,  4.13s/it]14:47:11 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/318587/43952_1000016721.png: binary/octet-stream
+Rescuing:  25%|██▌       | 16/64 [00:55<02:45,  3.44s/it]14:47:13 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/313084/107113_1001361820.png: binary/octet-stream
+Rescuing:  27%|██▋       | 17/64 [00:55<01:58,  2.53s/it]14:47:13 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/234165/31069_532338.png: binary/octet-stream
+Rescuing:  28%|██▊       | 18/64 [00:57<01:40,  2.18s/it]14:47:14 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/310004/140032_1000043833.png: binary/octet-stream
+Rescuing:  30%|██▉       | 19/64 [00:58<01:20,  1.79s/it]14:47:15 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/359692/150152_43714.png: binary/octet-stream
+14:47:18 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  31%|███▏      | 20/64 [01:01<01:46,  2.42s/it]14:47:19 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/286813/34481_3182.png: binary/octet-stream
+14:47:21 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:47:21 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  33%|███▎      | 21/64 [01:08<02:34,  3.59s/it]14:47:25 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:47:25 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/355683/61350_987.png: binary/octet-stream
+Rescuing:  34%|███▍      | 22/64 [01:11<02:21,  3.36s/it]14:47:28 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/316256/44059_1000446480.png: binary/octet-stream
+Rescuing:  36%|███▌      | 23/64 [01:13<02:01,  2.97s/it]14:47:30 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/218455/69191_1000000994.png: binary/octet-stream
+14:47:30 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/229540/34971_1000000517.png: binary/octet-stream
+14:47:33 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  39%|███▉      | 25/64 [01:18<01:48,  2.79s/it]14:47:36 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:47:36 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/201094/138163_1000044024.png: binary/octet-stream
+14:47:39 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:47:39 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:47:43 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  41%|████      | 26/64 [01:26<02:40,  4.23s/it]14:47:44 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/377745/86091_31044.png: binary/octet-stream
+Rescuing:  42%|████▏     | 27/64 [01:30<02:27,  3.98s/it]14:47:47 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/410057/160493_1000174197.png: binary/octet-stream
+Rescuing:  44%|████▍     | 28/64 [01:30<01:50,  3.06s/it]14:47:48 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/259068/32262_1000258729.png: binary/octet-stream
+Rescuing:  45%|████▌     | 29/64 [01:35<01:58,  3.39s/it]14:47:52 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:47:54 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/235995/30186_1000292625.png: binary/octet-stream
+Rescuing:  47%|████▋     | 30/64 [01:37<01:49,  3.22s/it]14:47:55 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/433426/42519_1000025898.png: binary/octet-stream
+Rescuing:  48%|████▊     | 31/64 [01:39<01:29,  2.71s/it]14:47:56 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/345925/38463_1000002908.png: binary/octet-stream
+Rescuing:  50%|█████     | 32/64 [01:40<01:09,  2.17s/it]14:47:57 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/421414/84431_34510.png: binary/octet-stream
+Rescuing:  52%|█████▏    | 33/64 [01:43<01:22,  2.65s/it]14:48:01 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/349531/134433_289.png: binary/octet-stream
+14:48:01 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  53%|█████▎    | 34/64 [01:44<01:04,  2.16s/it]14:48:03 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/241237/146211_4776.png: binary/octet-stream
+Rescuing:  55%|█████▍    | 35/64 [01:46<00:57,  1.98s/it]14:48:04 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/315365/157601_1000070118.png: binary/octet-stream
+Rescuing:  56%|█████▋    | 36/64 [01:47<00:43,  1.56s/it]14:48:04 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/305422/35463_79275.png: binary/octet-stream
+Rescuing:  58%|█████▊    | 37/64 [01:50<01:01,  2.26s/it]14:48:08 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/344157/37909_1000002841.png: binary/octet-stream
+14:48:08 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:48:09 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  59%|█████▉    | 38/64 [01:54<01:06,  2.54s/it]14:48:12 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/229990/33664_1000057649.png: binary/octet-stream
+14:48:12 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:48:14 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  61%|██████    | 39/64 [01:57<01:11,  2.86s/it]14:48:15 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/223246/29496_1000315808.png: binary/octet-stream
+Rescuing:  62%|██████▎   | 40/64 [02:00<01:09,  2.88s/it]14:48:18 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/258428/34391_1000001368.png: binary/octet-stream
+Rescuing:  64%|██████▍   | 41/64 [02:01<00:49,  2.14s/it]14:48:18 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/413082/68410_1000134059.png: binary/octet-stream
+Rescuing:  66%|██████▌   | 42/64 [02:02<00:42,  1.93s/it]14:48:20 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/211352/30168_1000006798.png: binary/octet-stream
+Rescuing:  67%|██████▋   | 43/64 [02:05<00:45,  2.17s/it]14:48:22 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:48:23 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/436868/42669_1000795862.png: binary/octet-stream
+Rescuing:  69%|██████▉   | 44/64 [02:08<00:52,  2.60s/it]14:48:26 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/341686/102350_14452.png: binary/octet-stream
+14:48:27 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  70%|███████   | 45/64 [02:11<00:50,  2.67s/it]14:48:29 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/282108/60632_1000066740.png: binary/octet-stream
+Rescuing:  72%|███████▏  | 46/64 [02:13<00:43,  2.42s/it]14:48:31 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:48:31 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/198269/42334_1000000116.png: binary/octet-stream
+14:48:32 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  73%|███████▎  | 47/64 [02:18<00:55,  3.25s/it]14:48:36 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:48:36 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/416662/154342_1000253732.png: binary/octet-stream
+Rescuing:  75%|███████▌  | 48/64 [02:21<00:47,  2.97s/it]14:48:38 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/379026/73682_1000271225.png: binary/octet-stream
+Rescuing:  77%|███████▋  | 49/64 [02:21<00:35,  2.34s/it]Rescuing:  78%|███████▊  | 50/64 [02:22<00:23,  1.70s/it]14:48:39 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/197691/26990_114614.png: binary/octet-stream
+14:48:39 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/338978/37540_1000000980.png: binary/octet-stream
+14:48:43 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  80%|███████▉  | 51/64 [02:27<00:35,  2.77s/it]14:48:45 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/359364/38594_1000390099.png: binary/octet-stream
+14:48:45 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  81%|████████▏ | 52/64 [02:29<00:30,  2.55s/it]14:48:47 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/201652/30756_1000030350.png: binary/octet-stream
+14:48:47 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  83%|████████▎ | 53/64 [02:32<00:30,  2.78s/it]14:48:50 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/230313/29646_1000086306.png: binary/octet-stream
+14:48:52 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  84%|████████▍ | 54/64 [02:38<00:37,  3.70s/it]Rescuing:  86%|████████▌ | 55/64 [02:38<00:24,  2.71s/it]14:48:56 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/356207/39116_1000000623.png: binary/octet-stream
+14:48:56 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/268087/33119_1000003523.png: binary/octet-stream
+Rescuing:  88%|████████▊ | 56/64 [02:39<00:16,  2.07s/it]14:48:57 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/220390/36781_1000324226.png: binary/octet-stream
+14:48:58 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  89%|████████▉ | 57/64 [02:41<00:15,  2.15s/it]14:49:00 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/319302/108186_1000233160.png: binary/octet-stream
+14:49:02 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:49:03 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+14:49:04 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  91%|█████████ | 58/64 [02:48<00:20,  3.41s/it]14:49:05 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/279396/62460_1000047121.png: binary/octet-stream
+14:49:06 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  92%|█████████▏| 59/64 [02:53<00:20,  4.03s/it]Rescuing:  94%|█████████▍| 60/64 [02:53<00:11,  2.88s/it]14:49:11 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/344093/59475_1000017479.png: binary/octet-stream
+Rescuing:  95%|█████████▌| 61/64 [02:55<00:07,  2.36s/it]Rescuing:  97%|█████████▋| 62/64 [02:57<00:04,  2.42s/it]14:49:15 [INFO] src.gemini_verifier: Partial extraction — retrying on enhanced image
+Rescuing:  98%|█████████▊| 63/64 [03:02<00:03,  3.13s/it]Rescuing: 100%|██████████| 64/64 [03:05<00:00,  3.13s/it]Rescuing: 100%|██████████| 64/64 [03:05<00:00,  2.90s/it]
+14:49:22 [INFO] project-trust: ✓ Wrote CSV: output/verification_results.csv (588 rows)
+14:49:22 [INFO] project-trust: ✓ Wrote summary: output/summary.json
+14:49:22 [INFO] rescue: Done. Recovered more data on 22/64 rows.
+
+============================================================
+ RESULTS SUMMARY
+============================================================
+  INVALID     154  ( 26.2%)
+  VERIFIED    148  ( 25.2%)
+  REVIEW      144  ( 24.5%)
+  REJECTED    112  ( 19.0%)
+  NO_UPLOAD    28  (  4.8%)
+  ERROR         2  (  0.3%)
+============================================================

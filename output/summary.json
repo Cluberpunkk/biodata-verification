@@ -1,0 +1,13 @@
+{
+  "total_processed": 588,
+  "tags": {
+    "REJECTED": 210,
+    "VERIFIED": 207,
+    "UNDER_REVIEW": 171
+  },
+  "tag_percentages": {
+    "REJECTED": 35.71,
+    "VERIFIED": 35.2,
+    "UNDER_REVIEW": 29.08
+  }
+}

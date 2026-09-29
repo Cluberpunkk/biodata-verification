@@ -1,0 +1,92 @@
+/Users/mohdshamshulqamar/Downloads/project-trust-verifier/src/gemini_verifier.py:20: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+13:54:24 [INFO] rerun: Found 31 ERROR rows to retry (of 588 total)
+13:54:24 [INFO] src.gemini_verifier: Initialised Gemini model: gemini-2.5-pro
+13:54:24 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:24 [INFO] rerun:   profile 294664: still ERROR
+13:54:24 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:24 [INFO] rerun:   profile 409642: still ERROR
+13:54:24 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:24 [INFO] rerun:   profile 330230: still ERROR
+13:54:24 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:24 [INFO] rerun:   profile 423155: still ERROR
+13:54:24 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:24 [INFO] rerun:   profile 438449: still ERROR
+13:54:35 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/398985/41435_1000004410.png: binary/octet-stream
+13:54:37 [WARNING] src.gemini_verifier: Gemini attempt 1/3 failed: 400 Unable to process input image. Please retry or report in https://developers.generativeai.google/guide/troubleshooting
+13:54:42 [WARNING] src.gemini_verifier: Gemini attempt 2/3 failed: 400 Unable to process input image. Please retry or report in https://developers.generativeai.google/guide/troubleshooting
+13:54:49 [WARNING] src.gemini_verifier: Gemini attempt 3/3 failed: 400 Unable to process input image. Please retry or report in https://developers.generativeai.google/guide/troubleshooting
+13:54:49 [INFO] rerun:   profile 398985: still ERROR
+13:54:49 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:49 [INFO] rerun:   profile 439020: still ERROR
+13:54:49 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:49 [INFO] rerun:   profile 233908: still ERROR
+13:54:49 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:49 [INFO] rerun:   profile 218944: still ERROR
+13:54:49 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:49 [INFO] rerun:   profile 393221: still ERROR
+13:54:50 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/228966/126552_37040.png: binary/octet-stream
+13:54:57 [INFO] rerun:   profile 228966: recovered -> VERIFIED
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 310860: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 234514: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 252346: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 384375: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 368965: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 278956: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 434661: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 414713: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 272312: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 201413: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 314562: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 250570: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 270939: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 224837: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 217185: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 301908: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 327420: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:54:57 [INFO] rerun:   profile 397069: still ERROR
+13:54:57 [WARNING] src.image_fetcher: Non-image content-type at https://matrimony-cdn.getlokalapp.com/matrimony-profile-documents/204152/104158_1000172162.png: binary/octet-stream
+13:54:57 [WARNING] src.gemini_verifier: Gemini attempt 1/3 failed: 400 Unable to process input image. Please retry or report in https://developers.generativeai.google/guide/troubleshooting
+13:55:00 [WARNING] src.gemini_verifier: Gemini attempt 2/3 failed: 400 Unable to process input image. Please retry or report in https://developers.generativeai.google/guide/troubleshooting
+13:55:05 [WARNING] src.gemini_verifier: Gemini attempt 3/3 failed: 400 Unable to process input image. Please retry or report in https://developers.generativeai.google/guide/troubleshooting
+13:55:05 [INFO] rerun:   profile 204152: still ERROR
+13:55:05 [WARNING] src.image_fetcher: Invalid URL skipped: ''
+13:55:05 [INFO] rerun:   profile 317064: still ERROR
+13:55:05 [INFO] project-trust: ✓ Wrote CSV: output/verification_results.csv (588 rows)
+13:55:05 [INFO] project-trust: ✓ Wrote summary: output/summary.json
+13:55:05 [INFO] rerun: Done. 1/31 ERROR rows recovered.
+
+============================================================
+ RESULTS SUMMARY
+============================================================
+  INVALID     154  ( 26.2%)
+  VERIFIED    148  ( 25.2%)
+  REVIEW      144  ( 24.5%)
+  REJECTED    112  ( 19.0%)
+  ERROR        30  (  5.1%)
+============================================================
